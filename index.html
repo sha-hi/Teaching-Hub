@@ -19,7 +19,30 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        .classes {
+    text-align: center;
+    margin: 40px 0;
+}
 
+.class-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.class-card {
+    padding: 15px 25px;
+    background: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.class-card:hover {
+    background: #f0f0f0;
+}
         body {
             background-color: var(--secondary);
             color: var(--text);
@@ -47,7 +70,7 @@
         }
 
         .logo {
-            font-size: 3.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
         }
 
@@ -271,7 +294,7 @@
     </header>
 
     <div id="home" class="hero">
-        <h1>Islamic Teacher & Mentor</h1>
+        <h1>Islamic Tutor & Mentor</h1>
         <p>Dedicated to nurturing the next generation with authentic Islamic knowledge and spiritual guidance.</p>
     </div>
 
@@ -279,10 +302,10 @@
         <h2>About Me</h2>
         <div class="grid">
             <div class="card">
-                <h3>Teaching Experience</h3>
-                <p>Over 15 years of experience in Madrasa education, focusing on Quranic studies and Islamic jurisprudence.</p>
+                <h3>Teaching Approach</h3>
+                <p>Teaching Islam through modern, interactive, and student-friendly methods that make learning meaningful, enjoyable, and easy to understand for children</p>
             </div>
-            <div class="card">
+            <div class="card" hidden>
                 <h3>Areas of Expertise</h3>
                 <ul>
                     <li>Hajj Classes & Practical Training</li>
@@ -310,6 +333,19 @@
             </div>
         </div>
     </section>
+
+
+<section class="classes">
+    <h2>Classes</h2>
+
+    <div class="class-links">
+        <a href="classes/class1.html" class="class-card">Class 1</a>
+        <a href="classes/class2.html" class="class-card">Class 2</a>
+        <a href="classes/class3.html" class="class-card">Class 3</a>
+        <a href="classes/class4.html" class="class-card">Class 4</a>
+    </div>
+</section>
+
 
     <section id="portal">
         <h2>Student & Parent Portal</h2>
