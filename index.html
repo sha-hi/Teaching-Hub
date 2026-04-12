@@ -182,6 +182,14 @@
             margin-bottom: 24px;
         }
 
+        .winner-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
         .winner-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -248,11 +256,25 @@
             gap: 15px;
         }
 
+        .gallery-item {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
         .gallery-grid img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 5px;
+            display: block;
+        }
+
+        .gallery-caption {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px 12px;
+            color: var(--text);
         }
 
         .alumni-list {
@@ -681,6 +703,7 @@
         <div class="grid">
             <div class="speedy card">
 <h3 class="winner-title">🎉🏆 Speedy Sweetstakes - Winner #1</h3>
+                <p class="winner-name">Winner: AL AMEEN - CLASS 4</p>
                 <div class="winner-gallery">
                         <img src="images/winner1.jpeg" alt="Speedy Sweetstakes Winner - Photo 1" style="width:100%;height:300px;object-fit:contain;object-position:center;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);background:#fff;">
                         <img src="images/winner2.jpeg" alt="Speedy Sweetstakes Winner - Photo 2" style="width:100%;height:300px;object-fit:contain;object-position:center;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);background:#fff;">
@@ -715,7 +738,7 @@
     </section>
 
     <section id="services">
-        <h2>Services & Skills</h2>
+        <h2>Services</h2>
         <div class="grid">
             <div class="card">
                 <h3>Hajj Training Class</h3>
@@ -752,10 +775,14 @@
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-            <img src="https://picsum.photos/seed/class1/400/300" alt="Classroom" referrerPolicy="no-referrer">
-            <img src="https://picsum.photos/seed/class2/400/300" alt="Event" referrerPolicy="no-referrer">
-            <img src="https://picsum.photos/seed/class3/400/300" alt="Students" referrerPolicy="no-referrer">
-            <img src="https://picsum.photos/seed/class4/400/300" alt="Lecture" referrerPolicy="no-referrer">
+            <figure class="gallery-item">
+                <img src="images/winner1.jpeg" alt="AL AMEEN from Class 4 - Speedy Sweetstakes Winner photo 1">
+                <figcaption class="gallery-caption">AL AMEEN - Class 4 Winner Photo 1</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/winner2.jpeg" alt="AL AMEEN from Class 4 - Speedy Sweetstakes Winner photo 2">
+                <figcaption class="gallery-caption">AL AMEEN - Class 4 Winner Photo 2</figcaption>
+            </figure>
         </div>
     </section>
 
