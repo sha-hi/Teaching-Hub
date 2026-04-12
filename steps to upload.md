@@ -25,7 +25,7 @@ git remote add origin https://github.com/sha-hi/Teaching-Hub.git  ← (connect t
 git push -u origin main                            ← (upload your files to GitHub)
 
 
-git status && git add . && git commit -m "name centered" && git push                    +++++++++++
+git status && git add . && git commit -m "Gallery updated" && git push                  
 
 =================================================================================================================
 
