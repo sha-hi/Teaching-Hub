@@ -875,10 +875,34 @@
     </footer>
 
     <script>
-        document.getElementById('myForm').addEventListener('submit', function (e) {
+        document.getElementById('myForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            const button = form.querySelector('button');
+            
+            button.disabled = true;
+            button.textContent = 'Sending...';
 
-            alert('Thank you for your message! This is a demo form.');
-            this.reset();
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent successfully.');
+                    form.reset();
+                } else {
+                    alert('Oops! There was a problem sending your message. Please try again.');
+                }
+            } catch (error) {
+                alert('Oops! There was a connection error. Please try again.');
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Send Message';
+            }
         });
 
         // Smooth scrolling for navigation links
