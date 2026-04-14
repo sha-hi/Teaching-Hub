@@ -1,0 +1,301 @@
+/* Shared Design System for Class Dashboards */
+:root {
+    --primary: #064E3B;
+    --secondary: #FDFBF7;
+    --accent: #B45309;
+    --accent-light: #F59E0B;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.class-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    background: var(--secondary);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #053b2d;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary);
+}
+
+/* Student Cards */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    text-align: center;
+    padding: 20px;
+    background: var(--secondary);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.1);
+}
+
+.student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+}
+
+.student-name {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Roadmap Styles */
+.roadmap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--secondary);
+    z-index: 1;
+}
+
+.roadmap-step {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--primary);
+    text-align: center;
+    width: 160px;
+    transition: all 0.3s ease;
+}
+
+.roadmap-step.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+.roadmap-step span {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Game Tiles */
+.game-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.game-tile {
+    padding: 30px;
+    background: #fff;
+    border: 2px solid var(--secondary);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--primary);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.game-tile:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.game-tile i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.game-tile h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Time Table Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none; /* Controlled by JS */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timetable-table th, .timetable-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.timetable-table th {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .roadmap {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .roadmap::before {
+        width: 4px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+    }
+}

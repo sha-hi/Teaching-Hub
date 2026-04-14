@@ -3,217 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 4</title>
-
+    <title>Class 4 - Teaching Hub Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Style -->
+    <link rel="stylesheet" href="class-common.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f2f4f8;
-            color: #333;
-        }
-
-        header {
-            background: #1a237e;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        h2 {
-            margin-top: 0;
-            color: #1a237e;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        /* Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-
-        th {
-            background: #e8eaf6;
-        }
-
-        /* Games */
-        .games a {
-            display: block;
-            padding: 12px;
-            margin: 8px 0;
-            background: #e8eaf6;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #1a237e;
-            transition: 0.3s;
-        }
-
-        .games a:hover {
-            background: #c5cae9;
-        }
-
-        /* Announcement */
-        .announcement {
-            background: #fff8e1;
-            border-left: 5px solid #fbc02d;
-            padding: 15px;
-        }
-
-        /* Back Button */
-        .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background: #1a237e;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .back-btn:hover {
-            background: #0d133d;
+        .announcement-card {
+            background: rgba(234, 179, 8, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Class 4</h1>
-    <p>Advanced Learning & Student Progress Portal</p>
-</header>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div>
+                <h1 class="class-title">Class 4</h1>
+                <p style="color: var(--text-muted); font-weight: 500;">Advanced Learning & Student Progress Portal</p>
+            </div>
+            <div class="header-actions">
+                <a href="../index.html" class="btn-secondary">Back to Home</a>
+                <button class="btn-primary" onclick="toggleTimetable()">View Time Table</button>
+            </div>
+        </header>
 
-<div class="container">
+        <!-- Announcements -->
+        <div class="announcement-card">
+            <h2 class="section-title" style="margin-top: 0; margin-bottom: 0.5rem;">Announcements</h2>
+            <p style="color: var(--text-color); font-size: 1.1rem; margin-bottom: 0;">Students should revise daily lessons and complete assigned activities regularly.</p>
+        </div>
 
-    <!-- Students -->
-    <div class="card">
-        <h2>Students</h2>
-        <ul>
-            <li>Amaana</li>
-            <li>Hamza</li>
-            <li>Al Ameen</li>
-            <li>Hamdan</li>
-            <li>Hafid</li>
-            <li>Shamil</li>
-        </ul>
+        <!-- Student Roster -->
+        <section class="section-card">
+            <h2 class="section-title">Students Roster</h2>
+            <div class="student-grid">
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/amaana/200" alt="Amaana" class="student-photo">
+                    <p class="student-name">Amaana</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/hamza/200" alt="Hamza" class="student-photo">
+                    <p class="student-name">Hamza</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/alameen/200" alt="Al Ameen" class="student-photo">
+                    <p class="student-name">Al Ameen</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/hamdan/200" alt="Hamdan" class="student-photo">
+                    <p class="student-name">Hamdan</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/hafid/200" alt="Hafid" class="student-photo">
+                    <p class="student-name">Hafid</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/shamil/200" alt="Shamil" class="student-photo">
+                    <p class="student-name">Shamil</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Focus -->
+        <section class="section-card">
+            <h2 class="section-title">Learning Focus</h2>
+            <p style="color: var(--text-color); font-size: 1.1rem; line-height: 1.6;">Advanced reading, understanding Islamic concepts, applying knowledge, and building confidence in recitation and comprehension.</p>
+        </section>
+
+        <!-- Learning Roadmap -->
+        <section class="section-card">
+            <h2 class="section-title">Learning Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-step">
+                    <span>Step 1<br>Foundations</span>
+                </div>
+                <div class="roadmap-step">
+                    <span>Step 2<br>Fluency</span>
+                </div>
+                <div class="roadmap-step">
+                    <span>Step 3<br>Understanding</span>
+                </div>
+                <div class="roadmap-step active">
+                    <span>Step 4<br>Mastery</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Student Progress -->
+        <section class="section-card">
+            <h2 class="section-title">Student Progress</h2>
+            <table class="timetable-table" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Amaana</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Hamza</td>
+                        <td>Very Good</td>
+                    </tr>
+                    <tr>
+                        <td>Al Ameen</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Hamdan</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Hafid</td>
+                        <td>Very Good</td>
+                    </tr>
+                    <tr>
+                        <td>Shamil</td>
+                        <td>Excellent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Learning Games -->
+        <section class="section-card">
+            <h2 class="section-title">Learning Games & Activities</h2>
+            <div class="game-tiles">
+                <a href="../games/quiz-game.html" class="game-tile">
+                    <h4>Islamic Quiz</h4>
+                    <p>Test knowledge</p>
+                </a>
+                <a href="../games/advanced-reading.html" class="game-tile">
+                    <h4>Advanced Reading</h4>
+                    <p>Fluency practice</p>
+                </a>
+                <a href="../games/fill-blanks.html" class="game-tile">
+                    <h4>Fill in the Blanks</h4>
+                    <p>Comprehension</p>
+                </a>
+                <a href="../games/mcq-game.html" class="game-tile">
+                    <h4>MCQ Practice</h4>
+                    <p>Multiple choice</p>
+                </a>
+                <a href="../games/memory-game.html" class="game-tile">
+                    <h4>Memory Challenge</h4>
+                    <p>Recall practice</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Class Gallery -->
+        <section class="section-card">
+            <h2 class="section-title">Class Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c4g1/600/400" alt="Class Activity 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c4g2/600/400" alt="Class Activity 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c4g3/600/400" alt="Class Activity 3">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Learning Focus -->
-    <div class="card">
-        <h2>Learning Focus</h2>
-        <p>Advanced reading, understanding Islamic concepts, applying knowledge, and building confidence in recitation and comprehension.</p>
+    <!-- Time Table Modal -->
+    <div id="timetableModal" class="modal-overlay" onclick="toggleTimetable()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Class 4 Time Table</h2>
+                <button onclick="toggleTimetable()" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color: var(--text-color);">&times;</button>
+            </div>
+            <table class="timetable-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>4:00 - 5:30 PM</td>
+                        <td>Qur'an & Tajweed</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>4:00 - 5:30 PM</td>
+                        <td>Fiqh & Practice</td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>4:00 - 5:30 PM</td>
+                        <td>Islamic History</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>4:00 - 5:30 PM</td>
+                        <td>Aqeedah</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <!-- Timetable -->
-    <div class="card">
-        <h2>Weekly Timetable</h2>
-
-        <table>
-            <tr>
-                <th>Day</th>
-                <th>Subject</th>
-            </tr>
-            <tr>
-                <td>Saturday</td>
-                <td>Qur'an & Tajweed</td>
-            </tr>
-            <tr>
-                <td>Sunday</td>
-                <td>Fiqh & Practice</td>
-            </tr>
-            <tr>
-                <td>Monday</td>
-                <td>Islamic History</td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>Aqeedah</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- Progress / Marks -->
-    <div class="card">
-        <h2>Student Progress</h2>
-
-        <table>
-            <tr>
-                <th>Student</th>
-                <th>Progress</th>
-            </tr>
-            <tr>
-                <td>Amaana</td>
-                <td>Good</td>
-            </tr>
-            <tr>
-                <td>Hamza</td>
-                <td>Very Good</td>
-            </tr>
-            <tr>
-                <td>Al Ameen</td>
-                <td>Excellent</td>
-            </tr>
-            <tr>
-                <td>Hamdan</td>
-                <td>Good</td>
-            </tr>
-            <tr>
-                <td>Hafid</td>
-                <td>Very Good</td>
-            </tr>
-            <tr>
-                <td>Shamil</td>
-                <td>Excellent</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- Announcements -->
-    <div class="card announcement">
-        <h2>Announcements</h2>
-        <p>Students should revise daily lessons and complete assigned activities regularly.</p>
-    </div>
-
-    <!-- Games -->
-    <div class="card games">
-        <h2>Learning Games & Activities</h2>
-
-        <!-- Update according to your files -->
-        <a href="../games/quiz-game.html">Islamic Quiz</a>
-        <a href="../games/advanced-reading.html">Advanced Reading Practice</a>
-        <a href="../games/fill-blanks.html">Fill in the Blanks</a>
-        <a href="../games/mcq-game.html">MCQ Practice</a>
-        <a href="../games/memory-game.html">Memory Challenge</a>
-
-    </div>
-
-    <!-- Back -->
-    <a href="../index.html" class="back-btn">Back to Home</a>
-
-</div>
-
+    <script>
+        function toggleTimetable() {
+            const modal = document.getElementById('timetableModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>

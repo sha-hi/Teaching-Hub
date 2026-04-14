@@ -3,117 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 1</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        header {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .games a {
-            display: block;
-            padding: 12px;
-            margin: 8px 0;
-            background: #ecf0f1;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #333;
-            transition: 0.3s;
-        }
-
-        .games a:hover {
-            background: #dcdde1;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 15px;
-            background: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .back-btn:hover {
-            background: #1a252f;
-        }
-    </style>
+    <title>Class 1 - Teaching Hub Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Shared Style -->
+    <link rel="stylesheet" href="class-common.css">
 </head>
 <body>
 
-<header>
-    <h1>Class 1</h1>
-    <p>Interactive Learning for Young Students</p>
-</header>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div>
+                <h1 class="class-title">Class 1</h1>
+                <p style="color: var(--text-muted); font-weight: 500;">Welcome to your interactive learning dashboard</p>
+            </div>
+            <div class="header-actions">
+                <a href="../index.html" class="btn-secondary">Back to Home</a>
+                <button class="btn-primary" onclick="toggleTimetable()">View Time Table</button>
+            </div>
+        </header>
 
-<div class="container">
+        <!-- Student Roster -->
+        <section class="section-card">
+            <h2 class="section-title">Students Roster</h2>
+            <div class="student-grid">
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/student1/200" alt="Ayisha" class="student-photo">
+                    <p class="student-name">Ayisha</p>
+                </div>
+                <div class="student-card">
+                    <img src="https://picsum.photos/seed/student2/200" alt="Izza" class="student-photo">
+                    <p class="student-name">Izza</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Students -->
-    <div class="card">
-        <h2>Students</h2>
-        <ul>
-            <li>Ayisha</li>
-            <li>Izza</li>
-        </ul>
+        <!-- Learning Roadmap -->
+        <section class="section-card">
+            <h2 class="section-title">Learning Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-step active">
+                    <span>Step 1<br>Foundations</span>
+                </div>
+                <div class="roadmap-step">
+                    <span>Step 2<br>Character</span>
+                </div>
+                <div class="roadmap-step">
+                    <span>Step 3<br>Practical</span>
+                </div>
+                <div class="roadmap-step">
+                    <span>Step 4<br>Mastery</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Games -->
+        <section class="section-card">
+            <h2 class="section-title">Interactive Learning Games</h2>
+            <div class="game-tiles">
+                <a href="../games/alif-game.html" class="game-tile">
+                    <h4>Alif Writing Game</h4>
+                    <p>Master the first letter of the alphabet</p>
+                </a>
+                <a href="../games/harakat-game.html" class="game-tile">
+                    <h4>Harakat Practice</h4>
+                    <p>Learn vowels and pronunciation</p>
+                </a>
+                <a href="../games/match-letter.html" class="game-tile">
+                    <h4>Letter Matching</h4>
+                    <p>Connect letters with their sounds</p>
+                </a>
+                <a href="../games/trace-letter.html" class="game-tile">
+                    <h4>Letter Tracing</h4>
+                    <p>Practice penmanship digitally</p>
+                </a>
+                <a href="../games/sound-game.html" class="game-tile">
+                    <h4>Sound Recognition</h4>
+                    <p>Identify letters by their unique sounds</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Class Gallery -->
+        <section class="section-card">
+            <h2 class="section-title">Class Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c1/600/400" alt="Class Activity 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c2/600/400" alt="Class Activity 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/c3/600/400" alt="Class Activity 3">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Learning Focus -->
-    <div class="card">
-        <h2>Learning Focus</h2>
-        <p>Basic Arabic letters, Harakat, and early reading skills through interactive and playful methods.</p>
+    <!-- Time Table Modal -->
+    <div id="timetableModal" class="modal-overlay" onclick="toggleTimetable()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Class 1 Time Table</h2>
+                <button onclick="toggleTimetable()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <table class="timetable-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Arabic Basics</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Early Reading</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Interactive Stories</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Character Building</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Fun & Games</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>8:00 - 9:30 AM</td>
+                        <td>Revision</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <!-- Games Section -->
-    <div class="card games">
-        <h2>Learning Games</h2>
-
-        <!-- Replace links with your actual file names -->
-        <a href="../games/alif-game.html">Alif Writing Game</a>
-        <a href="../games/harakat-game.html">Harakat Practice</a>
-        <a href="../games/match-letter.html">Letter Matching Game</a>
-        <a href="../games/trace-letter.html">Letter Tracing</a>
-        <a href="../games/sound-game.html">Letter Sound Game</a>
-
-    </div>
-
-    <!-- Back Button -->
-    <a href="../index.html" class="back-btn">Back to Home</a>
-
-</div>
-
+    <script>
+        function toggleTimetable() {
+            const modal = document.getElementById('timetableModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
